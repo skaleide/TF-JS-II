@@ -77,3 +77,5 @@ O operador condicional (ternário) é o único operador JavaScript que possui tr
 ```javascript
 condition ? expr1 : expr2;
 ```
+
+🏋🏽 Bora praticar.. clique aqui para acessar a [lista de atividades](https://docs.google.com/document/d/1qEdaMjPX9npERnQLLwXl7i9ZkGUPry_ZcNqbrl7J5vo).
