@@ -39,7 +39,7 @@ const pessoas = [
 Em JavaScript, o for...of permite iterar sobre objetos igualmente iteráveis (arrays, objetos, strings etc.). O funcionamento do for...of ocorre em cada elemento do objeto iterável executando o corpo do loop. 
 
 ```javascript
-for (const elemento in linguagensDeProgramacao) {
+for (const elemento of linguagensDeProgramacao) {
   console.log(`${elemento}`)
 }
 ```
