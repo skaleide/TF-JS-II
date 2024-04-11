@@ -37,7 +37,7 @@ const pessoas = [
 ];
 // Acessando elementos do array
 // console.log(pessoas)
-// console.log(pessoas[3])
+// console.log(pessoas[3]) // posição inexistente retorna undefined
 // const pessoaDada = pessoas[2];
 // console.log(pessoaDada.nome)
 // console.log(pessoas[2]["nome"])
