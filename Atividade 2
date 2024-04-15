@@ -1,0 +1,45 @@
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+
+function verificarAcesso(nome, nivelAcesso, horarioAcesso) {
+    const horarioAbertura = 8;
+    const horarioFechamento = 22;
+    const horarioVisitaInicio = 9;
+    const horarioVisitaFim = 18;
+
+    const hora = parseInt(horarioAcesso);
+
+    
+    if (hora < horarioAbertura || hora >= horarioFechamento) {
+        return `Desculpe, ${nome}, o prédio está fechado no momento.`;
+    }
+
+    
+    if (nivelAcesso === 'visitante' && (hora < horarioVisitaInicio || hora >= horarioVisitaFim)) {
+        return `Desculpe, ${nome}, o horário de visitas para visitantes é das 9h às 18h.`;
+    }
+
+    
+    if (nivelAcesso === 'administrador' || nivelAcesso === 'gerente' || (nivelAcesso === 'funcionario' && hora >= horarioAbertura)) {
+        return `Olá, ${nome}! Bem-vindo ao prédio.`;
+    } else {
+        return `Desculpe, ${nome}, seu nível de acesso não é suficiente para entrar no prédio neste horário.`;
+    }
+}
+
+
+rl.question('Nome do usuário: ', (nome) => {
+  rl.question('Nível de acesso (visitante, funcionario, gerente ou administrador): ', (nivelAcesso) => {
+    rl.question('Horário de acesso: ', (horarioAcesso) => {
+      
+      const mensagem = verificarAcesso(nome, nivelAcesso, horarioAcesso);
+      console.log(mensagem);
+      rl.close();
+    });
+  });
+});
